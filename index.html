@@ -1,0 +1,45 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Implementación BlueKai CoreTag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <article id="article_loremipsum">
+        <a href="formulario.html"><p>Formulario</p></a>
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <button id="readMore" name="Click" onclick="clickCounterTwo()"
+        >Leer más</button>
+    </article>
+    <div id="readmore_btn">
+        <p>Conteo de clicks en botón "Leer más":</p>
+        <p class="clicks"></p>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+    <iframe name="__bkframe" height="0" width="0" frameborder="0" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="about:blank"></iframe>
+    <script type="text/javascript" src="http://tags.bkrtx.com/js/bk-coretag.js"></script>
+
+    <script type="text/javascript">  
+    var elementReadMore = document.getElementById("readMore");
+        elementReadMore.addEventListener('click', function () {
+            bk_addPageCtx('eventType', 'Read more'); //describe the click event
+            bk_addPageCtx('productName', 'Leer más'); //provide the product name
+            bk_addPageCtx('productCategory', 'Test update'); //provide the product category
+            bk_doJSTag(71403, 3);
+        });
+
+        var clickTwo = 0;
+        function clickCounterTwo() {
+            clickTwo += 1;
+            document.querySelector(".clicks").innerHTML = clickTwo;
+        }
+    </script>
+</body>
+</html>

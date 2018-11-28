@@ -1,0 +1,55 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Envío de Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+        <h1>Formulario</h1>
+        <form id="formulario">
+            <input type="text" id="name" placeholder="Nombre">
+            <input type="text" id="lastname" placeholder="Apellido">
+            <input type="text" id="phone" placeholder="Celular">
+            <input type="email" id="email" placeholder="Email">
+        </form>
+        <div id="form_bottom">
+            <input type="radio" id="male" name="gender"><label for="male">Hombre</label>
+            <input type="radio" id="female" name="gender"><label for="female">Mujer</label>
+            <button type="submit" id="submit" name="Submit" onclick="clickCounter(); alert('El formulario ha sido enviado')">Enviar
+                Formulario</button>
+        </div>
+        <div id="form_btn">
+            <p>Conteo de clicks en botón "Enviar formulario":</p>
+            <p id="demo"></p>
+        </div>
+
+    <a href="index.html"><p>Regreso a index</p></a>
+
+    <iframe name="__bkframe" height="0" width="0" frameborder="0" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)"
+        src="about:blank"></iframe>
+    <script type="text/javascript" src="formulario.js"></script>
+    <script type="text/javascript" src="http://tags.bkrtx.com/js/bk-coretag.js"></script>
+    <script type="text/javascript">
+    var elementSubmit = document.getElementById("submit");
+    elementSubmit.addEventListener('click', function () {
+        // stopPropagation();
+
+        bk_addPageCtx('eventType', 'Submit Form'); //describe the click event
+        bk_addPageCtx('productName', 'Enviar Formulario'); //provide the product name
+        bk_addPageCtx('productCategory', 'Test'); //provide the product category
+        // bk_addPageCtx(<<Key1>>, <<Value1>>); //add in key value pairs as needed
+        bk_addEmailHash('emailAddress', 'User Email');
+        bk_addPhoneHash('phoneNumber', 'User Phone');
+        bk_doJSTag(71403, 1);
+    });
+    var clickOne = 0;
+        function clickCounter() {
+            clickOne += 1;
+            document.getElementById("demo").innerHTML = clickOne;
+        }
+    </script>
+</body>
+</html>
