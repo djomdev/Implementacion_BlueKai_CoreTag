@@ -41,14 +41,15 @@
         bk_addPageCtx('productName', 'Enviar Formulario'); //provide the product name
         bk_addPageCtx('productCategory', 'Test'); //provide the product category
         // bk_addPageCtx(<<Key1>>, <<Value1>>); //add in key value pairs as needed
+        bk_addPageCtx('clickNumber', 'clicks');
         bk_addEmailHash('emailAddress', 'User Email');
         bk_addPhoneHash('phoneNumber', 'User Phone');
         bk_doJSTag(71403, 1);
     });
-    var clickOne = 0;
-        function clickCounter() {
-            clickOne += 1;
-            document.getElementById("demo").innerHTML = clickOne;
+    var clicks = 0;
+        function myFunction() {
+            clicks += 1;
+            document.getElementById("demo").innerHTML = clicks;
         }
     </script>
 </body>
